@@ -1,5 +1,5 @@
 # MS_data
-Mossbauer absorption spectrum analysis of 57Fe.
+Mossbauer absorption spectrum analysis of 57Fe/oxyhaemoglobin.
 ### About project
 - Mossbauer spectroscopy lab for AGH UST Biomedical Engineering students
 - Day performed: 3 march 2020  
