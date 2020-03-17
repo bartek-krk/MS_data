@@ -25,8 +25,23 @@ vals = list()
 for i in range(0,len(data)):
     vals.append(data.iloc[i][1])
     args.append(data.iloc[i][0])
+#predicted parameters
+y0_pred = 4435
+amp1_pred = 3538
+cen1_pred = 60
+amp2_pred = 3736
+cen2_pred = 88
+amp3_pred = 3999
+cen3_pred = 116
+amp4_pred = 3962
+cen4_pred = 138
+amp5_pred = 3658
+cen5_pred = 166
+amp6_pred = 3540
+cen6_pred = 194
 
-popt, pcov = curve_fit(lorentz6P, args, vals, p0=[4435, 3538, 60, 1, 3736, 88, 1, 3999, 116, 1, 3962, 138, 1, 3658, 166, 1, 3540, 194, 1])
+popt, pcov = curve_fit(lorentz6P, args, vals, p0=[y0_pred, amp1_pred, cen1_pred, 1, amp2_pred, cen2_pred, 1, amp3_pred, cen3_pred, 1, amp4_pred, cen4_pred, 1, amp5_pred, cen5_pred, 1, amp6_pred, cen6_pred, 1])
+#1 is default value for p0 in curve_fit
 
 plt.figure(figsize=(20,10))
 plt.plot(args, vals, 'r.')
@@ -61,7 +76,7 @@ for i in range(3,20,3):
 perr = np.sqrt(np.diag(pcov))
 
 j=1
-print("niepewnosc wyznaczenia y0:", perr[0])
+print("y0 error:", perr[0])
 for i in range(1,18,3):
     while j<7:
         print("peak amplitude error ", j , "  ", perr[i])
